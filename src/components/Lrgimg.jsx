@@ -1,11 +1,11 @@
-import React from 'rect';
+import React from 'react';
 
 const LrgImg = () =>{
     return (
         <div>
             <div className="lg-img-hldr">
                 <div className="top-bar">
-                    <a href="#" onClick={}><img src="../icon/close-svg.svg" className="close-icon" alt="This is close icon"/></a>
+                    <a  onClick=""><img src="../icon/close-svg.svg" className="close-icon" alt="This is close icon"/></a>
                 </div>
                 <img src="" alt="" />
                 <div className="bottom-bar">

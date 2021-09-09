@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 
 class Img extends Component{
+    constructor (props){
+        super(props);
+    }
     render(){
         return (
         <div className="img-holder">
-            <h1>Cow Titties</h1>
-            <img style = {{width: '400px', height:'300px'}} src="../img/01.jpg" alt="Papa smurf cleans train."/>
+            <p>{this.props.desc}</p>
+            <img src="../img/01.jpg"/>
         </div>
         );
 
