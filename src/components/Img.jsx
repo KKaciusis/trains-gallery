@@ -8,7 +8,7 @@ class Img extends Component{
         return (
         <div className="img-holder">
             <p>{this.props.desc}</p>
-            <img src="../img/01.jpg"/>
+            <img src={this.props.src}/>
         </div>
         );
 

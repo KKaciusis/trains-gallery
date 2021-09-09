@@ -21,14 +21,25 @@ class Images extends Component{
                 {imgSrc: '../img/11.jpg', desc: 'Rainy day in nowhere.'},
                 {imgSrc: '../img/12.jpg', desc: 'Star train waiting for passengers.'}
             ],
-            imgStyle: {},
+            imgStyle: {
+                imgListConStyle:{
+                    display: 'flex'
+                }
+            },
             lrgImg: {}
         }
     }
     render(){
+        let imageItemList = this.state.imgLst.map(image => {
+            return (
+                <button onClick="" style={{background: 'none', border:  'none'}} key={image.imgSrc[0]}><Img src={image.imgSrc}/></button>
+            );
+        });
         return (
         <React.Fragment>
-            <Img/>
+            <div className="wrapper" style={this.state.imgStyle.imgListConStyle}>
+                {imageItemList}
+            </div>
         </React.Fragment>
         );
 

@@ -1,11 +1,12 @@
 .wrapper{
     display: flex;
+    width: 90%;
     justify-content: space-around;
     flex-basis: 90%;
     flex-wrap: wrap;
 }
 .img-holder{
-    width: 300px;
+    width: 400px;
     object-position: center;
 }
 .img-holder img{
