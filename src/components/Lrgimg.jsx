@@ -5,11 +5,11 @@ const LrgImg = (props) =>{
         <div>
             <div className="lg-img-hldr">
                 <div className="top-bar">
-                    <a  onClick=""><img src={props.src} className="close-icon" alt="This is close icon"/></a>
+                    <a onClick={props.closeImage}><img src="../icon/close-svg.svg" className="close-icon" alt="This is close icon"/></a>
                 </div>
-                <img src="" alt="" />
+                <img className="imager" src={props.src}/>
                 <div className="bottom-bar">
-                    <div className="descriptions">{props.description}</div>
+                <div className="description">{props.description}</div>
                 </div>
             </div>
         </div>

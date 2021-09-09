@@ -26,7 +26,8 @@ class Images extends Component{
                     display: 'flex'
                 },
                 lrgImgConStyle : {
-                    display: 'none'
+                    display: 'none',
+                    width: 'auto'
                 }
             },
             lrgImg: {
@@ -55,7 +56,7 @@ class Images extends Component{
                     this.setState({
                         lrgImg: {
                             src: e.target.src,
-                            description: element.description
+                            description: element.desc
                         }
                     });
                 }else{
@@ -64,6 +65,23 @@ class Images extends Component{
             });
         };
     };
+
+    lrgImgClose = (e) =>{
+        e.preventDefault();
+        this.setState({
+            imgStyle: {
+            imgListConStyle:{
+                display: 'flex'
+            },
+            lrgImgConStyle : {
+                display: 'none'
+            }
+        }})
+    }
+
+
+
+
     render(){
         let imageItemList = this.state.imgLst.map(image => {
             return (
@@ -73,7 +91,7 @@ class Images extends Component{
         return (
         <React.Fragment>
             <div className="lg-img-con" style = {this.state.imgStyle.lrgImgConStyle}>
-                <LrgImg src={this.state.lrgImg.src} description={this.state.lrgImg.description}/>
+                <LrgImg closeImage={this.lrgImgClose} src={this.state.lrgImg.src} description={this.state.lrgImg.description}/>
             </div>
             <div className="wrapper" style={this.state.imgStyle.imgListConStyle}>
                 {imageItemList}
