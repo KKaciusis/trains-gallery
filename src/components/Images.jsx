@@ -24,19 +24,57 @@ class Images extends Component{
             imgStyle: {
                 imgListConStyle:{
                     display: 'flex'
+                },
+                lrgImgConStyle : {
+                    display: 'none'
                 }
             },
-            lrgImg: {}
+            lrgImg: {
+                src: '',
+                description: ''
+            }
         }
     }
+    handleClick = (e) => {
+        console.log("Halleliuyah");
+        e.preventDefault();
+        if(this.state.imgStyle.imgListConStyle.display === 'flex'){
+            this.setState({
+                imgStyle: {
+                    imgListConStyle:{
+                        display: 'none'
+                    },
+                    lrgImgConStyle : {
+                        display: 'block'
+                    }
+                }
+            });
+            Object.values(this.state.imgLst).forEach(element =>{
+                let sourceString = '..'+e.target.src.toString().slice(21);
+                if(element.imgSrc === sourceString){
+                    this.setState({
+                        lrgImg: {
+                            src: e.target.src,
+                            description: element.description
+                        }
+                    });
+                }else{
+                    console.log("Death")
+                }
+            });
+        };
+    };
     render(){
         let imageItemList = this.state.imgLst.map(image => {
             return (
-                <button onClick="" style={{background: 'none', border:  'none'}} key={image.imgSrc[0]}><Img src={image.imgSrc}/></button>
+                <button onClick={this.handleClick} style={{background: 'none', border:  'none'}} key={image.imgSrc[0]}><Img src={image.imgSrc} desc={image.desc}/></button>
             );
         });
         return (
         <React.Fragment>
+            <div className="lg-img-con" style = {this.state.imgStyle.lrgImgConStyle}>
+                <LrgImg src={this.state.lrgImg.src} description={this.state.lrgImg.description}/>
+            </div>
             <div className="wrapper" style={this.state.imgStyle.imgListConStyle}>
                 {imageItemList}
             </div>
