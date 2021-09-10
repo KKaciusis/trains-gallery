@@ -1,4 +1,5 @@
 .wrapper{
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -13,9 +14,12 @@
     object-position: center;
     background: linear-gradient(-45deg, #ffff, #ffff, #23a6d5, #23d5ab);
     background-size: 400% 400%;
-    animation: gradient 10s ease infinite;;
+    animation: gradient 15s ease infinite;;
     border:4px solid white;
     border-radius: 6PX;
+}
+.img-holder:hover{
+    border:4px solid black;
 }
 .img-holder img{
     cursor: pointer;
@@ -71,7 +75,6 @@ min-width: 100%;
 }
 .top-bar > a:hover {
     cursor: pointer;
-    background: white;
 }
 
 .top-bar{
